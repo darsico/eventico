@@ -5,5 +5,5 @@ content-type: application/json
  "name": "Sample Event",
  "description": "This is a sample event.",
  "location": "Sao Paulo",
- "date": "2025-01-01T15:30:00.000Z"
+ "dateTime": "2025-01-01T15:30:00.000Z"
 }

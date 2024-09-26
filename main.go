@@ -3,11 +3,13 @@ package main
 import (
 	"net/http"
 
+	"example.com/eventico/db"
 	"example.com/eventico/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+  db.InitDB()
   server := gin.Default()
 
   server.GET("/events", getEvents)
