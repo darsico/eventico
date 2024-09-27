@@ -1,10 +1,13 @@
-PUT http://localhost:8080/events/1
+PUT http://localhost:8080/events/3
 content-type: application/json
+# user 1
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3Mjc0NzM4OTAsInVzZXJJZCI6MX0.eVD2E2hj2uYFCfIMrzhqoviLSOk7Q7LDaIZPQsblcfs
+# user 2
+## authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQHRlc3QuY29tIiwiZXhwIjoxNzI3NDc2Njg5LCJ1c2VySWQiOjJ9.3IRvQBj4mhhG-Wj-dnYoyWEXiEEIDKvrl2hikyC5cjg
 
 {
-  "name": "Updated Event",
-  "description": "Updated Description",
-  "location": "Rio de Janeiro",
+  "name": "Updated Event pe",
+  "description": "Updated Description pe",
+  "location": "NEW YORK",
   "dateTime": "2022-12-31T23:59:59.999Z" 
 }

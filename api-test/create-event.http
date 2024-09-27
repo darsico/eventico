@@ -3,8 +3,8 @@ content-type: application/json
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3Mjc0NzM4OTAsInVzZXJJZCI6MX0.eVD2E2hj2uYFCfIMrzhqoviLSOk7Q7LDaIZPQsblcfs
 
 { 
- "name": "NEW TEST event 2005!!",
- "description": "NEW This is another sample event yes 2005!!",
- "location": "NEW boston",
+ "name": "new event 3!!",
+ "description": "another event",
+ "location": "NEW YORK",
  "dateTime": "2025-01-01T15:30:00.000Z"
 }
