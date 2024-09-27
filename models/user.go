@@ -49,7 +49,7 @@ func (u *User) Save() error {
   return nil
 }
 
-func (u User) ValidateCredentials() error {
+func (u *User) ValidateCredentials() error {
   query := `
       SELECT id, password
       FROM users
