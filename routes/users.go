@@ -27,3 +27,25 @@ func signup (context *gin.Context) {
     "message": "User created successfully",
   })
 }
+
+func login (context *gin.Context) {
+  user := models.User{}
+
+  err := context.ShouldBindJSON(&user)
+
+  if err != nil {
+    context.JSON(http.StatusBadRequest, gin.H{"error": "Invalid data", "message": err.Error()})
+    return
+  }
+
+  err = user.ValidateCredentials()
+
+  if err != nil {
+    context.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid credentials"})
+    return
+  }
+
+  context.JSON(http.StatusOK, gin.H{
+    "message": "User logged in successfully",
+  })  
+}
