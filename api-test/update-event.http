@@ -1,0 +1,8 @@
+PUT http://localhost:8080/events/15
+
+{
+  "name": "Updated Event",
+  "description": "Updated Description",
+  "location": "Rio de Janeiro",
+  "dateTime": "2022-12-31T23:59:59.999Z" 
+}
