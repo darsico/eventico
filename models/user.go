@@ -13,7 +13,7 @@ type User struct {
   Password string `binding:"required"`
 }
 
-func (u User) Save() error {
+func (u *User) Save() error {
   query := `
     INSERT INTO users(email, password)
     VALUES (?, ?)
@@ -51,14 +51,15 @@ func (u User) Save() error {
 
 func (u User) ValidateCredentials() error {
   query := `
-      SELECT password
+      SELECT id, password
       FROM users
       WHERE email = ?
   `
   row := db.DB.QueryRow(query, u.Email)
 
   var retrievedPassword string
-  err := row.Scan(&retrievedPassword)
+  // explains this: https://pkg.go.dev/database/sql#Row.Scan
+  err := row.Scan(&u.ID, &retrievedPassword)
 
   if err != nil {
     return errors.New("invalid credentials")

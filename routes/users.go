@@ -4,10 +4,11 @@ import (
 	"net/http"
 
 	"example.com/eventico/models"
+	"example.com/eventico/utils"
 	"github.com/gin-gonic/gin"
 )
 
-func signup (context *gin.Context) {
+func signup (context *gin.Context) {  
   user := models.User{}
   err := context.ShouldBindJSON(&user)
 
@@ -45,7 +46,17 @@ func login (context *gin.Context) {
     return
   }
 
+  token, err := utils.GenerateToken(user.Email, user.ID)
+
+  if err != nil {
+    context.JSON(http.StatusInternalServerError, gin.H{"message": "Couldn't authenticate user", 
+      "error": err.Error()})
+  
+    return
+  }
+
   context.JSON(http.StatusOK, gin.H{
     "message": "User logged in successfully",
+    "token": token,
   })  
 }
