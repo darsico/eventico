@@ -60,4 +60,17 @@ func cancelRegistration(context *gin.Context) {
   }
 
   context.JSON(http.StatusOK, gin.H{"message": "Successfully cancelled registration"})
-} 
+}
+
+func getRegisteredEvents(context *gin.Context) {
+  userId := context.GetInt64("userId")
+
+  events, err := models.GetRegisteredEvents(userId)
+
+  if err != nil {
+    context.JSON(http.StatusInternalServerError, gin.H{"message": "Error getting events", "error": err.Error()})
+    return
+  }
+
+  context.JSON(http.StatusOK, events)
+}

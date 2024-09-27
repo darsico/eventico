@@ -39,8 +39,6 @@ func getEvents(context *gin.Context) {
 }
 
 func createEvent(context *gin.Context) {
-
-
   event := models.Event{}
   err := context.ShouldBindJSON(&event)
   if err != nil {
