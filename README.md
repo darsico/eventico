@@ -12,4 +12,4 @@ Eventico is a Go-powered REST API for event booking. This API allows users to cr
 ## Project Details
 
 - Go 1.23.0 or later
-- A running instance of a database (MySQL)
+- A running instance of a database (SQLite)
